@@ -19,3 +19,11 @@ class Program
         Console.WriteLine($"\nYour name is {lastName}, {firstName} {lastName}");
     }
 }
+
+class Test1
+{
+    public static void Main(double[] hi)
+    {
+        
+    }
+}
