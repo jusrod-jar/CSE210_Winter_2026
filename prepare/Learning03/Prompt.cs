@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 public class Prompt
 {
-    public string _prompt;
-
     private List<string> _prompts = new List<string>
     {
         "What color best represents today?",
