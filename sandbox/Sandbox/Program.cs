@@ -6,6 +6,13 @@ using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
+    static void Main(string[] args)
+    {
+        DateOnly currentDate = DateOnly.FromDateTime(DateTime.Now);
+        Console.WriteLine(currentDate); 
+    }
+}
+
     // static void Main(string[] args)
     // {
     // }
@@ -27,20 +34,19 @@ class Program
     //     y = 10;
     // }
 
-    static void Main(string[] args)
-    {
 
-        Console.WriteLine("Circle");
 
-        Circle myCircle = new Circle();
+        // Console.WriteLine("Circle");
 
-        myCircle.SetRadius(10);
-        Console.WriteLine(myCircle.GetRadius());
+        // Circle myCircle = new Circle();
 
-        Circle myCircle2 = new Circle();
+        // myCircle.SetRadius(10);
+        // Console.WriteLine(myCircle.GetRadius());
 
-        myCircle.SetRadius(100);
-        Console.WriteLine(myCircle.GetRadius());
+        // Circle myCircle2 = new Circle();
+
+        // myCircle.SetRadius(100);
+        // Console.WriteLine(myCircle.GetRadius());
 
 
     //     int x = 20;
@@ -55,6 +61,3 @@ class Program
     //     int z;
     //     passByOut(out z);
     //     Console.WriteLine(z);
-    }
-
-}
