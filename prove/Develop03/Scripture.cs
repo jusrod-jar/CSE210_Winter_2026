@@ -1,13 +1,14 @@
 public class Scripture
 {
     string _scripture;
-    public Scripture()
+    public string GetNewScripture()
     {
         GetRandom random = new GetRandom();
         _scripture = random.GetRandomScripture();
-    }
-    public string GetScripture()
-    {
         return _scripture;
     }
+    // public string RemoveWords()
+    // {
+        
+    // }
 }
