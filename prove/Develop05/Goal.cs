@@ -60,4 +60,5 @@ abstract class Goal
     public abstract string SaveGoal();
     public abstract void LoadGoal(string[] parts);
     public abstract void RandomGoal();
+    public abstract string ShowcaseRandomGoal();
 }

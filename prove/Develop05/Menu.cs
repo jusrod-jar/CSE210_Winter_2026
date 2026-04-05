@@ -162,36 +162,8 @@ class Menu
 
     public void RandomGoal()
     {
-        string answer;
-        
-        Random random = new Random();
-        int index = random.Next(1, 3);
-
-        if (index == 1)
-        {
-            do
-            {
-            SimpleGoal simpleGoal = new SimpleGoal();
-            simpleGoal.RandomGoal();
-            simpleGoal.ListGoal();
-
-            Console.Write("Would you like to keep this goal or refresh? (y/n): ");
-            answer = Console.ReadLine(); 
-
-            } while (answer != "y");
-        }
-
-        if (index == 2)
-        {
-            EternalGoal eternalGoal = new EternalGoal();
-            string goal = eternalGoal.RandomGoal();
-        }
-
-        if (index == 3)
-        {
-            ChecklistGoal checklistGoal = new ChecklistGoal();
-            string goal = checklistGoal.RandomGoal();
-        }
-
+        Console.WriteLine("\nSimple, Eternal, and Checklist goals are present within the pool. Keep refreshing to find a goal you want.");
+        GetRandom getRandom = new GetRandom();
+        _goals.Add(getRandom.GetRandomGoal());
     }
 }
