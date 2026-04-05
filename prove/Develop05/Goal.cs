@@ -16,7 +16,7 @@ abstract class Goal
         _goalType = type;
     }
 
-    public void SetBaseProperties()
+    protected void SetBaseProperties()
     {
         SetName();
         SetDescription();
@@ -59,4 +59,5 @@ abstract class Goal
     public abstract int RecordEvent();
     public abstract string SaveGoal();
     public abstract void LoadGoal(string[] parts);
+    public abstract void RandomGoal();
 }

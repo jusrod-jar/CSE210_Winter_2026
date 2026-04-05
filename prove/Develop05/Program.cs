@@ -41,6 +41,11 @@ class Program
 
             else if (user_choice == 6)
             {
+                menu.RandomGoal();
+            }
+                
+            else if (user_choice == 7)
+            {
                 Console.WriteLine("Thank you for using our program");
                 active = false;
             }

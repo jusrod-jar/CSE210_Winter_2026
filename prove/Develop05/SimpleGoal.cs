@@ -1,5 +1,13 @@
 class SimpleGoal : Goal
 {
+    private List<(string name, string description, int points)> prompts = new List<(string name, string description, int points)>
+    {
+    ("Cleaning", "Thoroughly clean one room or area in your living space.", 50),
+    ("Epicurean", "Cook a brand new recipe from scratch.", 40),
+    ("Budgeting", "Draft a budget for the upcoming month.", 60),
+    ("Detox", "Spend one entire day completely free of social media and recreational screen time.", 100),
+    ("Shower", "Go take a shower because I can smell you through the screen", 50)
+    };
     public SimpleGoal(): base("Simple")
     {
         
@@ -34,8 +42,10 @@ class SimpleGoal : Goal
         _status = bool.Parse(parts[4]);
     }
 
-    // public void AssembleGoal(string name, string description, int goalPoints, bool status)
-    // {
-        
-    // }
+    public override void RandomGoal()
+    {
+        Random random = new Random();
+        int index = random.Next(1, 5);
+        (_name, _description, _goalPoints) = prompts[index];
+    }
 }

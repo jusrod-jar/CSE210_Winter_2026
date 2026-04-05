@@ -1,5 +1,13 @@
 class EternalGoal : Goal
 {
+    private List<(string name, string description, int points)> prompts = new List<(string name, string description, int points)>
+    {
+    ("Iron", "Complete a one-hour workout at the gym.", 50),
+    ("Literacy", "Read at least 20 pages or one full chapter of a book.", 40),
+    ("Mindfulness", "Spend 10 minutes in silent meditation.", 20),
+    ("Hydration", "Drink 8 glasses of water throughout a single day.", 30),
+    ("Daily Walk", "Take a 30-minute walk outside to get some fresh air.", 50)
+    };
     public EternalGoal() : base("Eternal")
     {
 
@@ -8,8 +16,6 @@ class EternalGoal : Goal
     {
         base.SetBaseProperties();
     }
-
-
     public override string ListGoal()
     {
 
@@ -28,5 +34,9 @@ class EternalGoal : Goal
         _name = parts[1];
         _description = parts[2];
         _goalPoints = int.Parse(parts[3]);
+    }
+    public override void RandomGoal()
+    {
+
     }
 }

@@ -14,7 +14,8 @@ class Menu
             Console.WriteLine("3. Save Goals");
             Console.WriteLine("4. Load Goals");
             Console.WriteLine("5. Record Event");
-            Console.WriteLine("6. Quit");
+            Console.WriteLine("6. Random Goal");
+            Console.WriteLine("7. Quit");
             Console.Write("Select Choice: ");
             initial_choice = int.Parse(Console.ReadLine());
         } while (initial_choice <= 0 || initial_choice >= 7);
@@ -157,5 +158,40 @@ class Menu
 
             Console.WriteLine($"Congratulations! You have earned {pointsEarned} points!");
         }
+    }
+
+    public void RandomGoal()
+    {
+        string answer;
+        
+        Random random = new Random();
+        int index = random.Next(1, 3);
+
+        if (index == 1)
+        {
+            do
+            {
+            SimpleGoal simpleGoal = new SimpleGoal();
+            simpleGoal.RandomGoal();
+            simpleGoal.ListGoal();
+
+            Console.Write("Would you like to keep this goal or refresh? (y/n): ");
+            answer = Console.ReadLine(); 
+
+            } while (answer != "y");
+        }
+
+        if (index == 2)
+        {
+            EternalGoal eternalGoal = new EternalGoal();
+            string goal = eternalGoal.RandomGoal();
+        }
+
+        if (index == 3)
+        {
+            ChecklistGoal checklistGoal = new ChecklistGoal();
+            string goal = checklistGoal.RandomGoal();
+        }
+
     }
 }
