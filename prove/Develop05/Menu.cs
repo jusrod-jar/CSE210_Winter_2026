@@ -18,7 +18,7 @@ class Menu
             Console.WriteLine("7. Quit");
             Console.Write("Select Choice: ");
             initial_choice = int.Parse(Console.ReadLine());
-        } while (initial_choice <= 0 || initial_choice >= 7);
+        } while (initial_choice <= 0 || initial_choice >= 8);
 
         return initial_choice;
     }

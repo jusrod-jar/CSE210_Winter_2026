@@ -53,12 +53,20 @@ abstract class Goal
     {
         return _name;
     }
-
-    public abstract string ListGoal();
+    public virtual string ShowcaseRandomGoal()
+    {
+        return $"\n{"Goal type:", -20} {_goalType}\n{"Name:", -20} {_name}\n{"Description:", -20} {_description}\n{"Points:", -20} {_goalPoints}";
+    }
+    public virtual string SaveGoal()
+    {
+        return $"{_goalType}~{_name}~{_description}~{_goalPoints}~{_status}";
+    }
+    public virtual string ListGoal()
+    {
+        return $"[{DisplayStatus()}] {_name} ({_description}) - {_goalType}";
+    }
     public abstract void CreateGoal();
     public abstract int RecordEvent();
-    public abstract string SaveGoal();
     public abstract void LoadGoal(string[] parts);
     public abstract void RandomGoal();
-    public abstract string ShowcaseRandomGoal();
 }

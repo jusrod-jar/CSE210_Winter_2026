@@ -16,18 +16,9 @@ class EternalGoal : Goal
     {
         base.SetBaseProperties();
     }
-    public override string ListGoal()
-    {
-
-        return $"[{DisplayStatus()}] {_name} ({_description}) - {_goalType}";
-    }
     public override int RecordEvent()
     {
         return _goalPoints;
-    }
-    public override string SaveGoal()
-    {
-        return $"{_goalType}~{_name}~{_description}~{_goalPoints}";
     }
     public override void LoadGoal(string[] parts)
     {
@@ -38,11 +29,8 @@ class EternalGoal : Goal
     public override void RandomGoal()
     {
         Random random = new Random();
-        int index = random.Next(1, 5);
+        int index = random.Next(0, prompts.Count());
         (_name, _description, _goalPoints) = prompts[index];
     }
-    public override string ShowcaseRandomGoal()
-    {
-        return $"\n{"Goal type:", -20} {_goalType}\n{"Name:", -20} {_name}\n{"Description:", -20} {_description}\n{"Points:", -20} {_goalPoints}";
-    }
+
 }
