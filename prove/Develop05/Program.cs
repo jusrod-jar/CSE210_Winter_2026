@@ -4,11 +4,47 @@ class Program
 {
     static void Main(string[] args)
     {
-        Goal myGoal = new Goal();
 
-        myGoal.SetName();
-        myGoal.SetDescription();
-        myGoal.SetPoints();
-        Console.WriteLine(myGoal.GetConsoleString());
+        Menu menu = new Menu();
+        bool active = true;
+
+        Console.WriteLine("\nWelcome to the Goal Program.");
+
+        while (active)
+        {
+
+            int user_choice = menu.ProcessMenu();
+            if (user_choice == 1)
+            {
+                menu.CreateNewGoal();
+            }
+
+            else if (user_choice == 2)
+            {
+                menu.ListGoals();
+            }
+
+            else if (user_choice == 3)
+            {
+                menu.SaveGoals();
+            }
+
+            else if (user_choice == 4)
+            {
+                menu.LoadGoals();
+            }
+
+            else if (user_choice == 5)
+            {
+                menu.RecordEvent();
+            }
+
+            else if (user_choice == 6)
+            {
+                Console.WriteLine("Thank you for using our program");
+                active = false;
+            }
+        }
+
     }
 }

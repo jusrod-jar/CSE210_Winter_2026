@@ -1,38 +1,62 @@
-class Goal
+abstract class Goal
 {
-    private string _name;
-    private string _description;
-    private int _numberOfPoints;
-    private bool _status;
-    private string _goalType;
-    
-    public Goal()
+    protected string _name;
+    protected string _description;
+    protected int _goalPoints;
+    protected bool _status;
+    protected string _goalType;
+
+
+    public Goal(string type)
     {
         _name = "";
         _description = "";
         _status = false;
-        _numberOfPoints = 0;
-        _goalType = "";
+        _goalPoints = 0;
+        _goalType = type;
     }
-    public void SetName()
+
+    public void SetBaseProperties()
     {
-        Console.Write("Please enter a name of your goal: ");
+        SetName();
+        SetDescription();
+        SetPoints();
+    }
+    public string DisplayStatus()
+    {
+        // Returns either an X or nothing
+        if (_status == true)
+        {
+            return "X";
+        }
+        else
+        {
+            return " ";
+        }
+    }
+    private void SetName()
+    {
+        Console.Write("What is the name of your goal? ");
         _name = Console.ReadLine();
     }
-    public void SetDescription()
+    private void SetDescription()
     {
-        Console.Write("Please enter the description of your goal: ");
+        Console.Write("What is a short description of your goal? ");
         _description = Console.ReadLine();
     }
-    public void SetPoints()
+    private void SetPoints()
     {
-        Console.Write("Please enter the points of your goal: ");
-        _numberOfPoints = int.Parse(Console.ReadLine());
+        Console.Write("Amount of points associated with this goal? ");
+        _goalPoints = int.Parse(Console.ReadLine());
+    }
+    public string GetName()
+    {
+        return _name;
     }
 
-
-    public virtual string GetConsoleString()
-    {
-        return $"Goal Information: {_name}, {_description}, {_numberOfPoints}";
-    }
+    public abstract string ListGoal();
+    public abstract void CreateGoal();
+    public abstract int RecordEvent();
+    public abstract string SaveGoal();
+    public abstract void LoadGoal(string[] parts);
 }
