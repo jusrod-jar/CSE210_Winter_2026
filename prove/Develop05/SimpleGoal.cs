@@ -1,6 +1,6 @@
 class SimpleGoal : Goal
 {
-    private List<(string name, string description, int points)> prompts = new List<(string name, string description, int points)>
+    private List<(string name, string description, int points)> _prompts = new List<(string name, string description, int points)>
     {
     ("Cleaning", "Thoroughly clean one room or area in your living space", 50),
     ("Epicurean", "Cook a brand new recipe from scratch", 40),
@@ -33,7 +33,7 @@ class SimpleGoal : Goal
     public override void RandomGoal()
     {
         Random random = new Random();
-        int index = random.Next(0, prompts.Count());
-        (_name, _description, _goalPoints) = prompts[index];
+        int index = random.Next(0, _prompts.Count());
+        (_name, _description, _goalPoints) = _prompts[index];
     }
 }

@@ -7,7 +7,7 @@ abstract class Goal
     protected string _goalType;
 
 
-    public Goal(string type)
+    protected Goal(string type)
     {
         _name = "";
         _description = "";
@@ -24,7 +24,6 @@ abstract class Goal
     }
     public string DisplayStatus()
     {
-        // Returns either an X or nothing
         if (_status == true)
         {
             return "X";

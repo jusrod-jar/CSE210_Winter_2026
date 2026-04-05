@@ -1,6 +1,6 @@
 class EternalGoal : Goal
 {
-    private List<(string name, string description, int points)> prompts = new List<(string name, string description, int points)>
+    private List<(string name, string description, int points)> _prompts = new List<(string name, string description, int points)>
     {
     ("Iron", "Complete a one-hour workout at the gym", 50),
     ("Literacy", "Read at least 20 pages or one full chapter of a book", 40),
@@ -29,8 +29,8 @@ class EternalGoal : Goal
     public override void RandomGoal()
     {
         Random random = new Random();
-        int index = random.Next(0, prompts.Count());
-        (_name, _description, _goalPoints) = prompts[index];
+        int index = random.Next(0, _prompts.Count());
+        (_name, _description, _goalPoints) = _prompts[index];
     }
 
 }

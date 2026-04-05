@@ -1,6 +1,6 @@
 class ChecklistGoal : Goal
 {
-    private List<(string name, string description, int points, int bonusPoints, int accomplishNum)> prompts = new List<(string name, string description, int points, int bonusPoints, int accomplishNum)>
+    private List<(string name, string description, int points, int bonusPoints, int accomplishNum)> _prompts = new List<(string name, string description, int points, int bonusPoints, int accomplishNum)>
     {
     ("Up Early", "Wake up by an early target time and start your day immediately", 50, 100, 5),
     ("Linguistics", "Spend 15 minutes practicing a new language", 20, 50, 14),
@@ -64,8 +64,8 @@ class ChecklistGoal : Goal
     public override void RandomGoal()
     {
         Random random = new Random();
-        int index = random.Next(0, prompts.Count());
-        (_name, _description, _goalPoints, _bonus, _accomplishNum) = prompts[index];
+        int index = random.Next(0, _prompts.Count());
+        (_name, _description, _goalPoints, _bonus, _accomplishNum) = _prompts[index];
     }
     public override string ShowcaseRandomGoal()
     {

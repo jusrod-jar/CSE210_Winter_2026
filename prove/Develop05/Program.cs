@@ -8,8 +8,6 @@ class Program
         Menu menu = new Menu();
         bool active = true;
 
-        Console.WriteLine("\nWelcome to the Goal Program.");
-
         while (active)
         {
 

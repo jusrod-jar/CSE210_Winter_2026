@@ -9,14 +9,14 @@ class Menu
         {
             Console.WriteLine($"\nYou have {_totalPoints} points.");
             Console.WriteLine("\nMenu Options:");
-            Console.WriteLine("1. Create New Goal");
-            Console.WriteLine("2. List Goals");
-            Console.WriteLine("3. Save Goals");
-            Console.WriteLine("4. Load Goals");
-            Console.WriteLine("5. Record Event");
-            Console.WriteLine("6. Random Goal");
-            Console.WriteLine("7. Quit");
-            Console.Write("Select Choice: ");
+            Console.WriteLine("  1. Create New Goal");
+            Console.WriteLine("  2. List Goals");
+            Console.WriteLine("  3. Save Goals");
+            Console.WriteLine("  4. Load Goals");
+            Console.WriteLine("  5. Record Event");
+            Console.WriteLine("  6. Random Goal");
+            Console.WriteLine("  7. Quit");
+            Console.Write("Select a choice from the menu: ");
             initial_choice = int.Parse(Console.ReadLine());
         } while (initial_choice <= 0 || initial_choice >= 8);
 
@@ -28,11 +28,11 @@ class Menu
         int goal_choice;
         do
         {
-            Console.WriteLine("\nThe types of goals are:");
-            Console.WriteLine("1. Simple Goal");
-            Console.WriteLine("2. Eternal Goal");
-            Console.WriteLine("3. Checklist Goal");
-            Console.Write("Which goal would you like to create? ");
+            Console.WriteLine("The types of goals are:");
+            Console.WriteLine("  1. Simple Goal");
+            Console.WriteLine("  2. Eternal Goal");
+            Console.WriteLine("  3. Checklist Goal");
+            Console.Write("Which type of goal would you like to create? ");
             goal_choice = int.Parse(Console.ReadLine());
         } while (goal_choice <= 0 || goal_choice >= 4);
 
