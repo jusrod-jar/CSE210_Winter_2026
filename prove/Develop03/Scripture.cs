@@ -42,17 +42,29 @@ class Scripture
         string[] lines = System.IO.File.ReadAllLines("bom.csv");
 
         Random random = new Random();
-        int i = random.Next(0, lines.Length);
-        string[] parts = lines[i].Split(",");
+        int randomScripIndex = random.Next(0, lines.Length);
 
-        _reference = new Reference(parts[0], int.Parse(parts[1]), int.Parse(parts[2]));
-        TextToWords(parts[3]);
+        string[] verse1Parts = lines[randomScripIndex].Split(",");
+
+        _reference = new Reference(verse1Parts[0], int.Parse(verse1Parts[1]), int.Parse(verse1Parts[2]));
+        TextToWords(verse1Parts[3]);
+
+        int determineVerseNum = random.Next(1, 3);
+        if (determineVerseNum == 2)
+        {
+            string[] verse2Parts = lines[randomScripIndex + 1].Split(",");
+            if (verse1Parts[0] == verse2Parts[0] && verse1Parts[1] == verse2Parts[1])
+            {
+            _reference = new Reference(verse1Parts[0], int.Parse(verse1Parts[1]), int.Parse(verse1Parts[2]), int.Parse(verse2Parts[2]));
+            TextToWords(verse2Parts[3]);
+            }
+        }
     }
 
     private void TextToWords(string text)
     {
-        string trimmed = $"{text.Trim("\"")}";
-        string[] parts = trimmed.Split(" ");
+        string trimmed = $"{text.Replace("\"", "")}";
+        string[] parts = trimmed.Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
         for (int i = 0; i < parts.Count(); i++)
         {
