@@ -4,7 +4,7 @@ class Menu
     private int _totalPoints = 0;
     public int ProcessMenu()
     {
-        int initial_choice;
+        int initialChoice;
         do
         {
             Console.WriteLine($"\nYou have {_totalPoints} points.");
@@ -17,15 +17,15 @@ class Menu
             Console.WriteLine("  6. Random Goal");
             Console.WriteLine("  7. Quit");
             Console.Write("Select a choice from the menu: ");
-            initial_choice = int.Parse(Console.ReadLine());
-        } while (initial_choice <= 0 || initial_choice >= 8);
+            initialChoice = int.Parse(Console.ReadLine());
+        } while (initialChoice <= 0 || initialChoice >= 8);
 
-        return initial_choice;
+        return initialChoice;
     }
 
     public void CreateNewGoal()
     {
-        int goal_choice;
+        int goalChoice;
         do
         {
             Console.WriteLine("The types of goals are:");
@@ -33,24 +33,24 @@ class Menu
             Console.WriteLine("  2. Eternal Goal");
             Console.WriteLine("  3. Checklist Goal");
             Console.Write("Which type of goal would you like to create? ");
-            goal_choice = int.Parse(Console.ReadLine());
-        } while (goal_choice <= 0 || goal_choice >= 4);
+            goalChoice = int.Parse(Console.ReadLine());
+        } while (goalChoice <= 0 || goalChoice >= 4);
 
-        if (goal_choice == 1)
+        if (goalChoice == 1)
         {
             SimpleGoal simplegoal = new SimpleGoal();
             simplegoal.CreateGoal();
             _goals.Add(simplegoal);
         }
 
-        else if (goal_choice == 2)
+        else if (goalChoice == 2)
         {
             EternalGoal eternalgoal = new EternalGoal();
             eternalgoal.CreateGoal();
             _goals.Add(eternalgoal);
         }
 
-        else if (goal_choice == 3)
+        else if (goalChoice == 3)
         {
             ChecklistGoal checklistgoal = new ChecklistGoal();
             checklistgoal.CreateGoal();

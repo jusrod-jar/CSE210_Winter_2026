@@ -13,38 +13,38 @@ class Program
         while (active)
         {
 
-            int user_choice = menu.ProcessMenu();
-            if (user_choice == 1)
+            int userChoice = menu.ProcessMenu();
+            if (userChoice == 1)
             {
                 menu.CreateNewGoal();
             }
 
-            else if (user_choice == 2)
+            else if (userChoice == 2)
             {
                 menu.ListGoals();
             }
 
-            else if (user_choice == 3)
+            else if (userChoice == 3)
             {
                 menu.SaveGoals();
             }
 
-            else if (user_choice == 4)
+            else if (userChoice == 4)
             {
                 menu.LoadGoals();
             }
 
-            else if (user_choice == 5)
+            else if (userChoice == 5)
             {
                 menu.RecordEvent();
             }
 
-            else if (user_choice == 6)
+            else if (userChoice == 6)
             {
                 menu.RandomGoal();
             }
                 
-            else if (user_choice == 7)
+            else if (userChoice == 7)
             {
                 Console.WriteLine("Thank you for using our program");
                 active = false;
