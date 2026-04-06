@@ -1,5 +1,7 @@
 using System;
 
+// I believe that in this assignment I exceeded the requirements and creativity by adding an extra menu option that will display to you
+// a random pre-written goal of any type, and prompt you to add the goal to your list or refresh it for a new one.
 class Program
 {
     static void Main(string[] args)
