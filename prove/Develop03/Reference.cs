@@ -1,29 +1,19 @@
-public class Reference
+class Reference
 {
-    string _filename = "bom.csv";
-    string _reference;
-    string _book;
-    int _chapter;
-    int _startVerse;
-    int _endVerse;
-    
-    public Reference()
-    {
-        
-    }
-    public Reference(string book, int chapter, int startVerse, int endVerse)
+    private string _book;
+    private int _chapter;
+    private int _verseStart;
+    private int _verseEnd;
+
+    public Reference(string book, int chapter, int verseStart, int verseEnd=0)
     {
         _book = book;
         _chapter = chapter;
-        _startVerse = startVerse;
-        _endVerse = endVerse;
+        _verseStart = verseStart;
+        _verseEnd = verseEnd;
     }
-    public Reference(string book, int chapter, int startVerse)
+    public string GetReference()
     {
-        
-    }
-    public void DisplayReference()
-    {
-        Console.WriteLine(_reference);
+        return $"{_book} {_chapter}:{_verseStart}-{_verseEnd}";
     }
 }
