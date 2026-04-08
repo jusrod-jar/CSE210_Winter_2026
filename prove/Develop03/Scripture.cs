@@ -35,7 +35,7 @@ class Scripture
     }
 
 
-    public void SetRandomScripture()
+    public void e()
     {
         _words.Clear();
 
