@@ -19,7 +19,7 @@ abstract class Event
 
     public string GetStandard()
     {
-        return $"\nTitle: {_title}\nEvent Description: {_description}\nDate: {_date}\nTime: {_time}\nAddress: {_address}";
+        return $"\nTitle: {_title}\nEvent Description: {_description}\nDate: {_date}\nTime: {_time}\nAddress: {_address.GetFullAddress()}";
     }
 
     public virtual string GetFull()
